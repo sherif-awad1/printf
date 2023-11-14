@@ -14,7 +14,7 @@
  * @leng: lenght mod
  * Return: number of byts
  */
-uint con_s(va_list arg, buf_t *op, cchr flag, int width, int prc, uchr leng)
+uint con_s(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 {
 	char *str, *n = "(null)";
 	int s;
@@ -32,7 +32,7 @@ uint con_s(va_list arg, buf_t *op, cchr flag, int width, int prc, uchr leng)
 	prc = (prc == -1) ? s : prc;
 	while (*str != '\0' && prc > 0)
 	{
-		byt += _memncpy(prc, str, 1);
+		byt += _memncpy(op, str, 1);
 		prc--;
 		str++;
 	}
@@ -69,7 +69,7 @@ uint con_S(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 
 	for (i = 0; *(str + i) != '\0' && i < prc; i++)
 	{
-		if (*(str + i) < 32 || *(str + i) > 128)
+		if (*(str + i) < 32 || *(str + i) >= 127)
 		{
 			byt += _memncpy(op, hex, 2);
 			if (*(str + i) < 16)
@@ -111,7 +111,7 @@ uint con_rev(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 	prc = (prc == -1) ? s : prc;
 	for (i = 0; last >= 0 && i < prc; i++)
 	{
-		byt += memncpy(op, (str + last), 1);
+		byt += _memncpy(op, (str + last), 1);
 		last--;
 	}
 	byt += print_nw(op, byt, flag, width);

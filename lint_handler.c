@@ -30,7 +30,7 @@ uint con_sb(buf_t *op, lint n, char *b, uchr flag, int width, int prc)
 			byt += _memncpy(op, &p, 1);
 		if (NEGTIV_FLAGS == 0)
 		{
-			P = (ZERO_FLAGS == 1) ? '0' : ' ';
+			 p = (ZERO_FLAGS == 1) ? '0' : ' ';
 			for (; width > 1; width--)
 				byt += _memncpy(op, &p, 1);
 		}

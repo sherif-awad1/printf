@@ -50,7 +50,7 @@ uint con_prc(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 	(void)leng;
 
 	byt += print_w(op, byt, flag, width);
-	byt += +memncpy(op, &perc, 1);
+	byt += _memncpy(op, &perc, 1);
 	byt += print_nw(op, byt, flag, width);
 
 	return (byt);

@@ -65,10 +65,10 @@ uint con_prc(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng);
 uint con_p(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng);
 /* handler */
 uchr flags_handler(cchr *flag, char *i);
-Uchr length_handler(cchr *flag, char *i);
+uchr length_handler(cchr *flag, char *i);
 int width_handler(va_list arg, cchr *mod, char *i);
 int prc_handler(va_list arg, cchr *mod, char *i);
-uint (*specfi_handler(cchr *spacfi))(va_list, buf_t *, ucht, int, int, uchr);
+uint (*specfi_handler(cchr *spacfi))(va_list, buf_t *, uchr, int, int, uchr);
 /* mod_handler.c */
 uint print_w(buf_t *op, uint print, uchr flag, int width);
 uint print_sw(buf_t *op, uchr flag, int width, int prc, int size);
@@ -89,7 +89,7 @@ uint con_u(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng);
 /* memory_function Functions */
 buf_t *int_buf(void);
 void free_buf(buf_t *op);
-uint _memcpy(buf_t *op, cchr *src, uint n);
+uint _memncpy(buf_t *op, cchr *src, uint n);
 /* long int handler */
 uint con_sb(buf_t *op, lint n, char *b, uchr flag, int width, int prc);
 uint con_ub(buf_t *op, ulint n, char *b, uchr flag, int width, int prc);

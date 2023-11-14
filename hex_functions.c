@@ -50,7 +50,7 @@ uint con_X(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 	uint byt = 0;
 	char *haX = "0X";
 
-	if (haX == LONG)
+	if (leng == LONG)
 		n = va_arg(arg, ulint);
 	else
 		n = va_arg(arg, uint);

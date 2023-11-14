@@ -38,7 +38,7 @@ uint print_sw(buf_t *op, uchr flag, int width, int prc, int size)
 	uint byt = 0;
 	char wid = ' ';
 
-	if (NAGTIV_FLAGS == 0)
+	if (NEGTIV_FLAGS == 0)
 	{
 		width -= (prc == -1) ? size : prc;
 		for (; width > 0; width--)
@@ -59,7 +59,7 @@ uint print_nw(buf_t *op, uint print, uchr flag, int width)
 	uint byt = 0;
 	char wid = ' ';
 
-	if (NAGTIV_FLAGS == 1)
+	if (NEGTIV_FLAGS == 1)
 	{
 		for (width -= print; width > 0; width--)
 			byt += _memncpy(op, &wid, 1);

@@ -18,7 +18,7 @@ uint con_d(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 {
 	lint d, c;
 	uint byt = 0, n = 0;
-	char p, spac = ' ', negtive = '-', plus = '+';
+	char p, spac = ' ', negtiv = '-', plus = '+';
 
 	if (leng == LONG)
 		d = va_arg(arg, lint);
@@ -74,7 +74,7 @@ uint con_b(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 	n = va_arg(arg, uint);
 
 	(void)leng;
-	return (con_ub(op, n, "01", flag, widtg, prc));
+	return (con_ub(op, n, "01", flag, width, prc));
 }
 /**
  * con_o - argment to octal
