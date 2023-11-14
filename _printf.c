@@ -9,7 +9,9 @@
  * @arg: argments pass to printf
  * @b: buf_t struct
  */
-void cleaner(va_list arg, buf_t *b)
+void cleaner(va_list arg, buf_t *op)
 {
 	va_end(arg);
-
+	write(1, op->str, op->leng);
+	free_buf(op);
+}
