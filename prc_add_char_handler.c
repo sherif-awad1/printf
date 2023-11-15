@@ -68,7 +68,8 @@ uint con_prc(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 uint con_p(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 {
 	char *n = "(nil)";
-	uint add, byt = 0;
+	ulint add;
+	uint byt = 0;
 
 	(void)leng;
 
