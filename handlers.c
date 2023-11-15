@@ -6,7 +6,7 @@
 #include "main.h"
 /**
  * flags_handler - to handle flags
- * @flag: point to flag
+ * @flags: point to flag
  * @i: index counter
  * Return: byt
  */
