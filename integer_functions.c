@@ -101,7 +101,9 @@ uint con_o(va_list arg, buf_t *op, uchr flag, int width, int prc, uchr leng)
 	if (HASH_FLAGS == 1 &&  n != 0)
 		byt += _memncpy(op, &zero, 1);
 	if (!(n == 0 && prc == 0))
-		byt += print_nw(op, byt, flag, width);
+		byt += con_ub(op, n, "01234567", flag, width, prc);
+
+	byt += print_nw(op, byt, flag, width);
 
 	return (byt);
 }
